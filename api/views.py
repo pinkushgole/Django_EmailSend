@@ -22,7 +22,8 @@ class SendMail(APIView):
         )
 
         try:
-            # `fail_silently` is an argument for the `send` method, not the constructor
+            # email.attach_file("C:\Users\Pinku\Downloads\tanjiro.jpg")
+            email.attach_file("C:\\Users\\Pinku\\Downloads\\tanjiro.jpg")
             email.send(fail_silently=False)
             return Response({'message': 'Email sent successfully'}, status=200)
         except Exception as e:
